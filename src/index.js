@@ -1,7 +1,17 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import PrimaryButton from "./components/Buttons";
+import {
+  PrimaryButton,
+  SecondaryButton,
+  TertiaryButton,
+} from "./components/Buttons";
 
-const App = () => <PrimaryButton>Hello world</PrimaryButton>;
+const App = () => (
+  <>
+    <PrimaryButton>Hello world</PrimaryButton>
+    <SecondaryButton>Goodbye world</SecondaryButton>
+    <TertiaryButton>Hey world</TertiaryButton>
+  </>
+);
 
 ReactDOM.render(<App />, document.querySelector("#root"));
