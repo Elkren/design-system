@@ -15,6 +15,7 @@ export const defaultTheme = {
 
   formElementBackground: neutral[100],
   textOnFormElementBackground: neutral[600],
+  illustrationBackgroundColor: neutral[100],
 
   primaryFont,
 
@@ -41,6 +42,7 @@ export const darkTheme = {
 
   formElementBackground: blue[100],
   textOnFormElementBackground: neutral[100],
+  illustrationBackgroundColor: neutral[100],
 
   primaryFont: primaryFont,
   disabled: neutral[400],

@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import { useSpring, animated, config } from "react-spring";
 import { typeScale } from "../utils";
 import { Illustrations, CloseIcon } from "../assets";
 import { PrimaryButton } from "./Buttons";
@@ -16,6 +17,12 @@ const ModalWrapper = styled.div`
   align-items: center;
   position: relative;
   border-radius: 2px;
+`;
+
+const ModalIllustrationWrapper = styled.div`
+  padding: 20px 20px 20px 20px;
+  border-radius: 2px;
+  background-color: ${(props) => props.theme.illustrationBackgroundColor};
 `;
 
 const SignUpHeader = styled.h3`
@@ -44,20 +51,32 @@ const CloseModalButton = styled.button`
   }
 `;
 
-export const SignUpModal = () => {
+export const SignUpModal = ({ showModal, setShowModal }) => {
+  const animation = useSpring({
+    opacity: showModal ? 1 : 0,
+    transform: showModal ? `translateY(0)` : `translateY(-200%)`,
+    config: config.slow,
+  });
   return (
-    <ModalWrapper>
-      <img
-        src={Illustrations.SignUp}
-        alt="Sign up for an account"
-        aria-hidden="true"
-      />
-      <SignUpHeader>Sign Up</SignUpHeader>
-      <SignUpText>Sign up today to get access</SignUpText>
-      <PrimaryButton>Sign up!</PrimaryButton>
-      <CloseModalButton aria-label="Close modal">
-        <CloseIcon />
-      </CloseModalButton>
-    </ModalWrapper>
+    <animated.div style={animation}>
+      <ModalWrapper>
+        <ModalIllustrationWrapper>
+          <img
+            src={Illustrations.SignUp}
+            alt="Sign up for an account"
+            aria-hidden="true"
+          />
+        </ModalIllustrationWrapper>
+        <SignUpHeader>Sign Up</SignUpHeader>
+        <SignUpText>Sign up today to get access</SignUpText>
+        <PrimaryButton>Sign up!</PrimaryButton>
+        <CloseModalButton
+          onClick={() => setShowModal(!showModal)}
+          aria-label="Close modal"
+        >
+          <CloseIcon />
+        </CloseModalButton>
+      </ModalWrapper>
+    </animated.div>
   );
 };
