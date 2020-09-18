@@ -11,6 +11,10 @@ const BUTTON_MODIFIERS = {
     font-size: ${typeScale.h5};
     padding: 16px 24px;
   `,
+};
+
+const PRIMARY_BUTTON_MODIFIERS = {
+  ...BUTTON_MODIFIERS,
   warning: () => `
     background-color: ${defaultTheme.status.warningColor};
     color: ${defaultTheme.textColorInverted};
@@ -23,6 +27,20 @@ const BUTTON_MODIFIERS = {
 
     &:active {
       background-color: ${defaultTheme.status.warningColorActive};
+    }
+  `,
+  error: () => `
+    background-color: ${defaultTheme.status.errorColor};
+    color: ${defaultTheme.textColorInverted};
+
+    &:hover, &:focus {
+      background-color: ${defaultTheme.status.errorColorHover};
+      outline: 3px solid ${defaultTheme.status.errorColorHover};
+      outline-offset: 2px;
+    }
+
+    &:active {
+      background-color: ${defaultTheme.status.errorColorActive};
     }
   `,
 };
@@ -45,6 +63,22 @@ const SECONDARY_BUTTON_MODIFIERS = {
       border-color: transparent;        
     }
   `,
+  error: () => `
+    background: none;
+    border: 2px solid ${defaultTheme.status.errorColor};
+    color: ${defaultTheme.status.errorColor};
+    
+    &:hover, &:focus {
+      background-color: ${defaultTheme.status.errorColorHover};
+      outline: 3px solid ${defaultTheme.status.errorColorHover};     
+      color: ${defaultTheme.textColorInverted} 
+    }
+
+    &:active {
+      background-color: ${defaultTheme.status.errorColorActive};  
+      border-color: transparent;        
+    }
+  `,
 };
 
 const TERTIARY_BUTTON_MODIFIERS = {
@@ -61,6 +95,20 @@ const TERTIARY_BUTTON_MODIFIERS = {
 
     &:active {
       background-color: ${defaultTheme.status.warningColorActive};
+    }
+  `,
+  error: () => `
+    background: none;
+    color: ${defaultTheme.status.errorColor};
+    
+    &:hover, &:focus {
+      background-color: ${defaultTheme.status.errorColorHover};
+      outline: 3px solid ${defaultTheme.status.errorColorHover};    
+      color: ${defaultTheme.textColorInverted}   
+    }
+
+    &:active {
+      background-color: ${defaultTheme.status.errorColorActive};
     }
   `,
 };
@@ -101,7 +149,7 @@ export const PrimaryButton = styled(Button)`
     color: ${defaultTheme.textOnDisabled};
     cursor: not-allowed;
   }
-  ${applyStyleModifiers(BUTTON_MODIFIERS)}
+  ${applyStyleModifiers(PRIMARY_BUTTON_MODIFIERS)}
 `;
 
 export const SecondaryButton = styled(Button)`
