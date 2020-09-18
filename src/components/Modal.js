@@ -6,6 +6,7 @@ import { Illustrations, CloseIcon } from "../assets";
 import { PrimaryButton } from "./Buttons";
 
 const ModalWrapper = styled.div`
+  font-family: ${(props) => props.theme.primaryFont};
   width: 800px;
   height: 500px;
   box-shadow: 0 5px 16px rgba(0, 0, 0, 0.2);
