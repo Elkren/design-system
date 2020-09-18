@@ -11,6 +11,58 @@ const BUTTON_MODIFIERS = {
     font-size: ${typeScale.h5};
     padding: 16px 24px;
   `,
+  warning: () => `
+    background-color: ${defaultTheme.status.warningColor};
+    color: ${defaultTheme.textColorInverted};
+
+    &:hover, &:focus {
+      background-color: ${defaultTheme.status.warningColorHover};
+      outline: 3px solid ${defaultTheme.status.warningColorHover};
+      outline-offset: 2px;
+    }
+
+    &:active {
+      background-color: ${defaultTheme.status.warningColorActive};
+    }
+  `,
+};
+
+const SECONDARY_BUTTON_MODIFIERS = {
+  ...BUTTON_MODIFIERS,
+  warning: () => `
+    background: none;
+    border: 2px solid ${defaultTheme.status.warningColor};
+    color: ${defaultTheme.status.warningColor};
+    
+    &:hover, &:focus {
+      background-color: ${defaultTheme.status.warningColorHover};
+      outline: 3px solid ${defaultTheme.status.warningColorHover};     
+      color: ${defaultTheme.textColorInverted} 
+    }
+
+    &:active {
+      background-color: ${defaultTheme.status.warningColorActive};  
+      border-color: transparent;        
+    }
+  `,
+};
+
+const TERTIARY_BUTTON_MODIFIERS = {
+  ...BUTTON_MODIFIERS,
+  warning: () => `
+    background: none;
+    color: ${defaultTheme.status.warningColor};
+    
+    &:hover, &:focus {
+      background-color: ${defaultTheme.status.warningColorHover};
+      outline: 3px solid ${defaultTheme.status.warningColorHover};    
+      color: ${defaultTheme.textColorInverted}   
+    }
+
+    &:active {
+      background-color: ${defaultTheme.status.warningColorActive};
+    }
+  `,
 };
 
 const Button = styled.button`
@@ -63,7 +115,7 @@ export const SecondaryButton = styled(Button)`
     border-color: ${defaultTheme.disabled};
     cursor: not-allowed;
   }
-  ${applyStyleModifiers(BUTTON_MODIFIERS)}
+  ${applyStyleModifiers(SECONDARY_BUTTON_MODIFIERS)}
 `;
 
 export const TertiaryButton = styled(Button)`
@@ -76,5 +128,5 @@ export const TertiaryButton = styled(Button)`
     color: ${defaultTheme.disabled};
     cursor: not-allowed;
   }
-  ${applyStyleModifiers(BUTTON_MODIFIERS)}
+  ${applyStyleModifiers(TERTIARY_BUTTON_MODIFIERS)}
 `;
