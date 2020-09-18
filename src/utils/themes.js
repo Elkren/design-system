@@ -13,6 +13,9 @@ export const defaultTheme = {
   disabled: neutral[400],
   textOnDisabled: neutral[300],
 
+  formElementBackground: neutral[100],
+  textOnFormElementBackground: neutral[600],
+
   primaryFont,
 
   status: {
@@ -35,6 +38,10 @@ export const darkTheme = {
   textColorOnPrimary: blue[300],
   textColor: blue[300],
   textColorInverted: neutral[100],
+
+  formElementBackground: blue[100],
+  textOnFormElementBackground: neutral[100],
+
   primaryFont: primaryFont,
   disabled: neutral[400],
   textOnDisabled: neutral[300],

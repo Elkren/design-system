@@ -1,11 +1,7 @@
 import React, { useState } from "react";
 import ReactDOM from "react-dom";
 import { ThemeProvider } from "styled-components";
-import {
-  PrimaryButton,
-  SecondaryButton,
-  TertiaryButton,
-} from "./components/Buttons";
+import { SignUpModal, PrimaryButton } from "./components";
 import { GlobalStyle, darkTheme, defaultTheme } from "./utils";
 
 const App = () => {
@@ -39,15 +35,13 @@ const App = () => {
         <div
           style={{
             width: "100vw",
-            height: "100vh",
+            height: "90vh",
             display: "flex",
             alignItems: "center",
             justifyContent: "space-around",
           }}
         >
-          <PrimaryButton>Hello world</PrimaryButton>
-          <SecondaryButton modifiers="success">Goodbye world</SecondaryButton>
-          <TertiaryButton>Hey world</TertiaryButton>
+          <SignUpModal />
         </div>
       </div>
       <GlobalStyle />
