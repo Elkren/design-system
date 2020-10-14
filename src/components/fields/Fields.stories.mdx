@@ -1,0 +1,16 @@
+import { Meta, Story, Preview } from "@storybook/addon-docs/blocks";
+import { action } from "@storybook/addon-actions";
+import { text } from "@storybook/addon-knobs";
+import { TextField } from "./Fields";
+
+<Meta title="Fields" component={TextField} />
+
+<Preview withToolbar>
+  <Story name="Text Field">
+    <TextField
+      onInputChange={action("input-change")}
+      labelText={text("Label text", "First name")}
+      id="testId"
+    />
+  </Story>
+</Preview>

@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import ReactDOM from "react-dom";
 import { ThemeProvider } from "styled-components";
-import { SignUpModal, PrimaryButton } from "./components";
+import { PrimaryButton, Player } from "./components";
 import { GlobalStyle, darkTheme, defaultTheme } from "./utils";
 
 const App = () => {
@@ -25,7 +25,10 @@ const App = () => {
             paddingTop: "30px",
           }}
         >
-          <PrimaryButton onClick={() => setUseDarkTheme(false)}>
+          <PrimaryButton
+            modifiers={["large", "error"]}
+            onClick={() => setUseDarkTheme(false)}
+          >
             Default theme
           </PrimaryButton>
           <PrimaryButton onClick={() => setUseDarkTheme(true)}>
@@ -45,7 +48,9 @@ const App = () => {
             justifyContent: "space-around",
           }}
         >
-          <SignUpModal showModal={showModal} setShowModal={setShowModal} />
+          <Player />
+          {/* <FieldInput id="money" labelText="Field label" /> */}
+          {/* <SignUpModal showModal={showModal} setShowModal={setShowModal} /> */}
         </div>
       </div>
       <GlobalStyle />

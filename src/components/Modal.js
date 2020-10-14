@@ -28,6 +28,7 @@ const ModalIllustrationWrapper = styled.div`
 
 const SignUpHeader = styled.h3`
   font-size: ${typeScale.header3};
+  margin-bottom: 0px;
 `;
 
 const SignUpText = styled.p`

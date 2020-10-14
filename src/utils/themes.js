@@ -1,5 +1,5 @@
 import { blue, neutral, yellow, red, green } from "./colours";
-import { primaryFont } from "./typography";
+import { primaryFont, typeScale } from "./typography";
 
 export const defaultTheme = {
   primaryColor: blue[300],
@@ -18,6 +18,14 @@ export const defaultTheme = {
   illustrationBackgroundColor: neutral[100],
 
   primaryFont,
+  fields: {
+    typeSize: typeScale.paragraph,
+    borderColor: neutral[600],
+    defaultBorderColor: "transparent",
+    textColor: neutral[600],
+    inputTextColor: neutral[600],
+    inputBackgroundColor: neutral[100],
+  },
 
   status: {
     warningColor: yellow[100],
@@ -45,6 +53,15 @@ export const darkTheme = {
   illustrationBackgroundColor: neutral[100],
 
   primaryFont: primaryFont,
+  fields: {
+    typeSize: typeScale.paragraph,
+    borderColor: neutral[100],
+    defaultBorderColor: neutral[100],
+    textColor: neutral[100],
+    inputTextColor: neutral[100],
+    inputBackgroundColor: blue[500],
+  },
+
   disabled: neutral[400],
   textOnDisabled: neutral[300],
   status: {
