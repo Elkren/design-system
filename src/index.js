@@ -1,12 +1,12 @@
 import React, { useState } from "react";
 import ReactDOM from "react-dom";
 import { ThemeProvider } from "styled-components";
-import { PrimaryButton, Player } from "./components";
+import { FullPlayer, Navigation, ProjectsSideBar, Search } from "./components";
 import { GlobalStyle, darkTheme, defaultTheme } from "./utils";
+
 
 const App = () => {
   const [useDarkTheme, setUseDarkTheme] = useState(false);
-  const [showModal, setShowModal] = useState(false);
   console.log(darkTheme);
   return (
     <ThemeProvider theme={useDarkTheme ? darkTheme : defaultTheme}>
@@ -17,41 +17,12 @@ const App = () => {
             : darkTheme.primaryColor,
         }}
       >
-        <div
-          style={{
-            width: "100vw",
-            display: "flex",
-            justifyContent: "space-around",
-            paddingTop: "30px",
-          }}
-        >
-          <PrimaryButton
-            modifiers={["large", "error"]}
-            onClick={() => setUseDarkTheme(false)}
-          >
-            Default theme
-          </PrimaryButton>
-          <PrimaryButton onClick={() => setUseDarkTheme(true)}>
-            Dark theme
-          </PrimaryButton>
-          <PrimaryButton onClick={() => setShowModal(!showModal)}>
-            Toggle modal
-          </PrimaryButton>
-        </div>
+        <Navigation />        
+        <ProjectsSideBar />
+        <Search />
+        <FullPlayer />
 
-        <div
-          style={{
-            width: "100vw",
-            height: "90vh",
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "space-around",
-          }}
-        >
-          <Player />
-          {/* <FieldInput id="money" labelText="Field label" /> */}
-          {/* <SignUpModal showModal={showModal} setShowModal={setShowModal} /> */}
-        </div>
+        
       </div>
       <GlobalStyle />
     </ThemeProvider>
