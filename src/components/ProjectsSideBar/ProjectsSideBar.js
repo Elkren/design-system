@@ -1,27 +1,19 @@
 import React from 'react'
 import styled from "styled-components";
-import { Logo, PlusIcon } from "../../assets";
-
-
+import { PlusIcon } from "../../assets";
 
 const SideBarWrapper = styled.div`      
     display: flex;  
     flex-direction: column;
-    align-items: center;
+    align-items: center;    
 
-    position: fixed;
-    width: 205px;
-    background-color: #22272a;
-    height: 100vh;
+    width: 100%;
+    height: 100%;
+    
+    background-color: #22272a;    
     color: white;
     text-transform: uppercase;        
     text-align: center;
-`
-const HomeLogo = styled.a`
-    display: inline-block;    
-    height: 4em;
-    width: 100%;
-    padding-top: 8px;    
 `
 
 const ProjectActionWrapper = styled.div`    
@@ -52,8 +44,7 @@ const AddToProjectsButton = styled.button`
 
 export function ProjectsSideBar({children}) {
     return (
-        <SideBarWrapper>
-            <HomeLogo href=""><Logo/></HomeLogo>
+        <SideBarWrapper>            
             <ProjectActionWrapper>
             Your Projects
                 <AddToProjectsButton>
