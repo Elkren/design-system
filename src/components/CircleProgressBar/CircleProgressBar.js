@@ -8,7 +8,7 @@ const CircleProgressBarWrapper = styled.div`
   margin-bottom: 3px;
   margin-left: -2px;
   position: absolute;
-  z-index: 0;
+  z-index: 0;  
 
   & svg * {    
     stroke-linejoin: round;

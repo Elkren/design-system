@@ -5,43 +5,41 @@ import { ThemeProvider } from "styled-components";
 import { FullPlayer, Navigation, ProjectsSideBar, Search } from "./components";
 import { GlobalStyle, darkTheme, defaultTheme } from "./utils";
 
-
 const LayoutWrapper = styled.div`
-  display: block;  
+  display: block;
   z-index: 0;
 
   @media (min-width: 1100px) {
-    display: grid;  
+    display: grid;
 
-    grid-template-areas: 
-    "header header"
-    "sidebar content";
+    grid-template-areas:
+      "header header"
+      "sidebar content";
 
     grid-template-columns: 205px auto;
     grid-template-rows: 4rem calc(100vh - 4rem);
   }
-`
+`;
 
 const NavigationWrapper = styled.div`
-   grid-area: header;
-`
+  grid-area: header;
+`;
 
 const SideBarWrapper = styled.div`
   display: none;
   @media (min-width: 1100px) {
     display: block;
-    grid-area: sidebar;   
+    grid-area: sidebar;
   }
-`
+`;
 
 const PageContentWrapper = styled.div`
-  grid-area: content; 
-`
+  grid-area: content;
+`;
 
-const PlayerWrapper = styled.div`  
+const PlayerWrapper = styled.div`
   z-index: 1;
-`
-
+`;
 
 const App = () => {
   const [useDarkTheme, setUseDarkTheme] = useState(false);
@@ -56,8 +54,8 @@ const App = () => {
         }}
       >
         <NavigationWrapper>
-          <Navigation />     
-        </NavigationWrapper>   
+          <Navigation />
+        </NavigationWrapper>
         <SideBarWrapper>
           <ProjectsSideBar />
         </SideBarWrapper>
@@ -67,7 +65,6 @@ const App = () => {
         <PlayerWrapper>
           <FullPlayer />
         </PlayerWrapper>
-        
       </LayoutWrapper>
       <GlobalStyle />
     </ThemeProvider>

@@ -7,6 +7,4 @@ export * from "./speaker-icon";
 export * from "./elipses-icon";
 export * from "./plus-icon";
 
-
-
 export * from "./logo";
